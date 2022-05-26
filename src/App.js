@@ -1,23 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Navbar, Product } from "./Components";
+import useCart from "./Hooks/useCart";
 function App() {
+  const { total, setTotal } = useCart();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App font-sans font-normal'>
+      <Navbar setTotal={setTotal} total={total} />
+      <Product setTotal={setTotal} />
     </div>
   );
 }

@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fancy {
+  border-radius: 58% 42% 79% 21% / 58% 42% 58% 42%;
+}
+@layer components {
+  .Link::after {
+    content: " ";
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 0;
+    top: 28px;
+    transition: all 0.2s ease-in;
+    @apply bg-primary-Orange;
+  }
+  .active {
+    @apply border-4 border-solid opacity-75 border-primary-Orange;
+  }
+}
+.Link:hover::after {
+  width: 100%;
 }
